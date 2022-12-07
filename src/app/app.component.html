@@ -1,0 +1,39 @@
+<div class="wrapper">
+
+  <button class="botao-inicial" role="button"><span class="text" (click)="teste()">Abrir Modal</span></button>
+
+  <ng-container *ngIf="mostrar">
+    <modalzinho class="modal">
+      <div titulo>Aperte um botão</div>
+      <div conteudo>Isso será algo bom para todas as pessoas</div>
+      <div class="container-buttons">
+        <button (click)="abrirSegundoModal()" class="button-auxiliar">Abrir Primeiro Modal</button>
+        <button (click)="teste()" class="button-auxiliar">Fechar</button>
+      </div>
+
+      <ng-container *ngIf="segundoModal">
+        <modalzinho class="segundoModal">
+          <div titulo>Gatos são maravilhosos</div>
+          <div conteudo>Ame gatos para a sua saúde</div>
+
+          <select [(ngModel)]="selectedTag">
+            <option *ngFor="let tag of tags" [value]="tag">{{ tag }}</option>
+          </select>
+
+          <input type="number" [(ngModel)]="statusCode" />
+
+          <div class="container-buttons">
+            <button (click)="consultar()" class="button-auxiliar">Consultar</button>
+            <button (click)="abrirSegundoModal()" class="button-auxiliar">Fechar</button>
+          </div>
+
+          <img *ngIf="linkImage" [src]="linkImage" />
+        </modalzinho>
+        <div class="overlay"></div>
+      </ng-container>
+
+    </modalzinho>
+    <div class="overlay"></div>
+  </ng-container>
+
+</div>

@@ -1,0 +1,131 @@
+* {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.overlay {
+    background: #000;
+    height: 100vh;
+    left: 0;
+    opacity: 0.5;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    z-index: 8;
+}
+
+.modal{
+    z-index: 9;
+}
+
+.segundoModal{
+    z-index: 15;
+    position: absolute;
+}
+
+.container-buttons{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+modalzinho{
+    position: absolute;
+}
+
+img{
+    width: 100%;
+    height: 70%;
+}
+
+.wrapper{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow: hidden;
+    background-image: url("https://time.com/wp-content/uploads/2017/10/229-westerlund-21.jpg?w=2000");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.button-auxiliar{
+    cursor: pointer;
+    border-radius: 15px;
+    background-color: #AF40FF;
+    border: none;
+    width: 11vw;
+    height: 4vh;
+    color: #fff;
+    font-weight: bolder;
+    margin: 1vh;
+    box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+input, select{
+    width: 80%;
+    height: 3vh;
+    border-radius: 15px;
+    border: none;
+    padding-left: 15px;
+    margin-top: 5px
+}
+
+.button-auxiliar:hover{
+    background-color: #FFFFFF;
+    color:#AF40FF
+}
+
+.botao-inicial {
+  align-items: center;
+  background-image: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB);
+  border: 0;
+  border-radius: 8px;
+  box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  display: flex;
+  font-family: Phantomsans, sans-serif;
+  font-size: 20px;
+  justify-content: center;
+  line-height: 1em;
+  max-width: 100%;
+  min-width: 140px;
+  padding: 3px;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.botao-inicial:active,
+.botao-inicial:hover {
+  outline: 0;
+}
+
+.botao-inicial span {
+  background-color: rgb(5, 6, 45);
+  padding: 16px 24px;
+  border-radius: 6px;
+  width: 100%;
+  height: 100%;
+  transition: 300ms;
+}
+
+.botao-inicial:hover span {
+  background: none;
+}
+
+@media (min-width: 768px) {
+    .botao-inicial {
+    font-size: 24px;
+    min-width: 196px;
+  }
+}
