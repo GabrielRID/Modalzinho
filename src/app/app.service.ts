@@ -14,5 +14,9 @@ export class AppService {
         return this.httpClient.get<string[]>('https://cataas.com/api/tags');
     }
 
+    getGOT(): Observable<object[]>{
+        return this.httpClient.get<object[]>('https://thronesapi.com/api/v2/Characters');
+    }
+
 }
 

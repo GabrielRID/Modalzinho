@@ -13,6 +13,7 @@ export class AppComponent implements OnInit{
 
   mostrar: boolean = false
   segundoModal: boolean = false
+  terceiroModal: boolean = false
   
   teste(){
     this.mostrar = !this.mostrar
@@ -22,10 +23,17 @@ export class AppComponent implements OnInit{
     this.segundoModal = !this.segundoModal
   }
 
+  abrirTerceiroModal(){
+    this.terceiroModal = !this.terceiroModal
+  }
+
   tags: string[] = [];
+  GOT: object[] = []
   selectedTag: string
   linkImage: string;
+  imageGOT: string;
   statusCode: string;
+
 
   constructor(
     private appService: AppService
@@ -34,14 +42,25 @@ export class AppComponent implements OnInit{
   ngOnInit(): void {
     this.appService.getTags()
     .subscribe(tags => {
-      console.log(tags);
       this.tags = tags;
     });
+
+    this.appService.getGOT()
+    .subscribe(GOTS => {
+      this.GOT = GOTS
+    })
   }
 
   consultar() {
-    console.log(this.selectedTag);
     this.linkImage = 'https://http.cat/' + Number(this.statusCode);
   }
 
+  consultarGOT(){
+    let item : any;
+    for (item of this.GOT) {
+      if (item.id === this.statusCode) {
+        this.imageGOT = item.imageUrl
+      }
+    }
+  }
 }

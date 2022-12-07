@@ -8,6 +8,7 @@
       <div conteudo>Isso será algo bom para todas as pessoas</div>
       <div class="container-buttons">
         <button (click)="abrirSegundoModal()" class="button-auxiliar">Abrir Primeiro Modal</button>
+        <button (click)="abrirTerceiroModal()" class="button-auxiliar">Abrir Segundo Modal</button>
         <button (click)="teste()" class="button-auxiliar">Fechar</button>
       </div>
 
@@ -17,7 +18,7 @@
           <div conteudo>Ame gatos para a sua saúde</div>
 
           <select [(ngModel)]="selectedTag">
-            <option *ngFor="let tag of tags" [value]="tag">{{ tag }}</option>
+            <option *ngFor="let tag of tags">{{ tag }}</option>
           </select>
 
           <input type="number" [(ngModel)]="statusCode" />
@@ -28,6 +29,27 @@
           </div>
 
           <img *ngIf="linkImage" [src]="linkImage" />
+        </modalzinho>
+        <div class="overlay"></div>
+      </ng-container>
+
+      <ng-container *ngIf="terceiroModal">
+        <modalzinho class="segundoModal">
+          <div titulo>Se você gosta de sangue, Game of Thrones é para você</div>
+          <div conteudo>Family Stark</div>
+
+          <select [(ngModel)]="selectedTag">
+            <option *ngFor="let tag of GOT" value="tag.id" (change)="consultarGOT()">{{ tag.id }}</option>
+          </select>
+
+          <input type="number" [(ngModel)]="statusCode" />
+
+          <div class="container-buttons">
+            <button (click)="consultarGOT()" class="button-auxiliar">Consultar</button>
+            <button (click)="abrirTerceiroModal()" class="button-auxiliar">Fechar</button>
+          </div>
+
+          <img *ngIf="imageGOT" src="{{ imageGOT }}" #gotImg/>
         </modalzinho>
         <div class="overlay"></div>
       </ng-container>
